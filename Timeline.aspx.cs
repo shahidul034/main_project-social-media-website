@@ -33,8 +33,12 @@ public partial class Timeline : System.Web.UI.Page
                 H3.Text = sdr["Address"].ToString();
                 H4.Text = sdr["Gender"].ToString();
 
-                    Image1.ImageUrl = "~/ShowImage.ashx?id=" + id;
                
+
+                /*byte[] bytes = (byte[])sdr["Image"];
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                Image1.ImageUrl = "data:image/png;base64," + base64String;
+               */
             }
             else
             {
@@ -48,6 +52,11 @@ public partial class Timeline : System.Web.UI.Page
         {
             Response.Write(ex.Message);
         } 
+    }
+
+    private object GetData(string p)
+    {
+        throw new NotImplementedException();
     }
   
     protected void Button1_Click1(object sender, EventArgs e)
