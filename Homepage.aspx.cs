@@ -21,7 +21,7 @@ public partial class Homepage : System.Web.UI.Page
             if (!usercookie.Value.Equals(-1)) {
                 Session.Clear();
                 Session["Login"] = TextBox1.Text;
-                Response.Redirect("sucess.aspx");
+                Response.Redirect("Timeline.aspx");
             }
  
         }
@@ -55,12 +55,12 @@ public partial class Homepage : System.Web.UI.Page
                 }
                 Session["username"] = uid;
                 Session["password"] = pass;
-                Response.Redirect("index.html");
+                Response.Redirect("Timeline.aspx");
                 //sucessfailure.Text = "Login Sucess......!!" + uid + " " + pass + "\n";
             }
             else
             {
-                TextBox3.Text = "UserId & Password Is not correct Try again..!! "+uid+" "+pass+"\n";
+                //TextBox3.Text = "UserId & Password Is not correct Try again..!! "+uid+" "+pass+"\n";
                 
 
             }

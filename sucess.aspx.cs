@@ -9,8 +9,9 @@ public partial class sucess : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string username = Session["username"].ToString();
-        TextBox1.Text = username;
+        //string username = Session["username"].ToString();
+        //TextBox1.Text = username;
+        
     }
   
     protected void Button1_Click1(object sender, EventArgs e)

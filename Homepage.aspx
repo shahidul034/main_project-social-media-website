@@ -16,7 +16,6 @@
 			<h1><img src="icon.ico" style="height: 90px"> We Talk</h1>
 		</div>
 	</header>
-        <asp:Label ID="TextBox3" runat="server" BackColor="#0066CC" BorderStyle="Groove" Font-Size="Large" Font-Bold="True" Font-Italic="True"></asp:Label>
 	<p id="date"></p>
    <p id="time"></p>
 
@@ -28,7 +27,7 @@
 			&nbsp; Password<br />
         <br />
        
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
         <br>
          Remember me<asp:CheckBox ID="CheckBox1" runat="server" />
          <asp:Button ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />

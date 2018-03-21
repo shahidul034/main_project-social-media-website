@@ -29,6 +29,8 @@
                 <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                <p>Gender</p>
                 <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                <p>Image</p>
+                <asp:FileUpload ID="FileUpload1" runat="server" />
 
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Signup" />
 				<a href="#">Forget Password</a><br />

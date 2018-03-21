@@ -30,8 +30,10 @@ public partial class SignUp : System.Web.UI.Page
             string t5 = TextBox5.Text;
             string t6 = TextBox6.Text;
             string t7 = TextBox7.Text;
+            string strname = FileUpload1.FileName.ToString();
+            FileUpload1.PostedFile.SaveAs(Server.MapPath("~/upload/") + strname);  
             con.Open();
-            string qry = "insert into signup values('" + t1 + "','" + t2 + "','" + t3 + "','" + t4 + "','" + t5 + "','" + t6 + "','" + t7 + "')";
+            string qry = "insert into signup values('" + t1 + "','" + t2 + "','" + t3 + "','" + t4 + "','" + t5 + "','" + t6 + "','" + t7 + "','" + strname + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataReader sdr = cmd.ExecuteReader();
             
