@@ -6,9 +6,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 public partial class Homepage : System.Web.UI.Page
 {
@@ -35,8 +37,9 @@ public partial class Homepage : System.Web.UI.Page
         {
             string uid = TextBox1.Text;
             string pass = TextBox2.Text;
-            con.Open();
-            string qry = "select * from signup where username='" + uid + "' and password='" + pass + "'";
+            if (con.State != ConnectionState.Open)
+                con.Open(); 
+            string qry = "select * from sign_up where username='" + uid + "' and password='" + pass + "'";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read())
