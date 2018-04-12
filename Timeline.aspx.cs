@@ -16,8 +16,27 @@ public partial class Timeline : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string username2 = Session["username"].ToString();
-        string password = Session["password"].ToString();
+        string username2="", password="";
+
+        try
+        {
+            username2 = Session["username"].ToString();
+            password = Session["password"].ToString();
+        }
+        catch (Exception ex) {
+            username2 = Request.Cookies["uname"].Value;
+            password = Request.Cookies["password"].Value;
+            try
+            {
+                username2 = Request.Cookies["uname"].Value;
+                password = Request.Cookies["password"].Value;
+            }
+            catch (Exception ex2) {
+                Response.Redirect("Homepage.aspx");
+            }
+        }
+            
+       
         H.InnerText = username2;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
         try
@@ -223,5 +242,11 @@ public partial class Timeline : System.Web.UI.Page
             
 
 
+        }
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Cookies["uname"].Expires = DateTime.Now.AddMinutes(-1);
+            Response.Redirect("Main_Homepage.aspx");
         }
 }

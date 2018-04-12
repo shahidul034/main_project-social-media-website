@@ -17,18 +17,15 @@ public partial class Homepage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         HttpCookie usercookie;
-        usercookie = Request.Cookies["Preferences"];
+        usercookie = Request.Cookies["uname"];
         if (usercookie != null)
         {
             if (!usercookie.Value.Equals(-1)) {
-                Session.Clear();
-                Session["Login"] = TextBox1.Text;
+               // Session.Clear();
                 Response.Redirect("Timeline.aspx");
             }
  
-        }
-
-     
+        } 
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -47,19 +44,14 @@ public partial class Homepage : System.Web.UI.Page
                 Session["Login"] = TextBox1.Text;
                 if (CheckBox1.Checked)
                 {
-                    HttpCookie usercookie;
-                    usercookie=Request.Cookies["Preferences"];
-                    if (usercookie==null) {
-                        usercookie = new HttpCookie("Preferences");
-                        usercookie.Expires = DateTime.Now.AddMonths(1);
-                        Response.Cookies.Add(usercookie);
-                    }
+                    Response.Cookies["uname"].Value = uid;
+                    Response.Cookies["password"].Value = pass;
+                    Response.Cookies["uname"].Expires=DateTime.Now.AddMinutes(3);
                 
                 }
                 Session["username"] = uid;
                 Session["password"] = pass;
                 Response.Redirect("Timeline.aspx");
-                //sucessfailure.Text = "Login Sucess......!!" + uid + " " + pass + "\n";
             }
             else
             {

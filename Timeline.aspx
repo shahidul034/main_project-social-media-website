@@ -19,7 +19,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:HyperLink ID="message" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/Message.aspx" Width="93px">Message</asp:HyperLink>  &nbsp;&nbsp; &nbsp;
          <asp:HyperLink ID="HyperLink1" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/newsfeed.aspx" Width="93px">Newsfeed</asp:HyperLink>
-       
+         
         <h1>&nbsp;&nbsp;&nbsp; Name:</h1>&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="H1" runat="server" BackColor="#006666" BorderStyle="Solid" ForeColor="#333333" Text="Name" BorderColor="Gray" BorderWidth="10px" Font-Size="X-Large" Width="432px"></asp:Label>
         &nbsp;<asp:TextBox ID="TextBox1" runat="server" Height="29px" style="margin-top: 0px" placeholder="First name" BackColor="White"></asp:TextBox>
         &nbsp;
@@ -98,6 +98,10 @@
         <br />
         <asp:Button ID="Button4" runat="server" OnClick="delete_button" Text="Delete" Font-Size="X-Large" Height="36px" Width="97px" />
         <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button5" runat="server" BackColor="Maroon" ForeColor="White" Height="31px" OnClick="Button5_Click" Text="Logout" Width="145px" />
         <br />
         <br />
         <br/>
