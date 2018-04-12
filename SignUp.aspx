@@ -9,6 +9,17 @@
 		<link rel="stylesheet" href="signup.css">
 	</head>
 	<body>
+
+
+        <header>
+		<div style="color: #FFFFFF; background-color: #000000">
+			<h1><img src="icon.ico" style="height: 90px"><asp:Label ID="Label1" runat="server" Text="We Talk"></asp:Label>    
+            </h1>
+		</div>
+              <div>
+               &nbsp; <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Main_Homepage.aspx" BackColor="Black" BorderStyle="Groove" BorderColor="Black" ForeColor="White" Height="40px" Width="133px" Font-Size="X-Large" Font-Italic="True" Font-Bold="True">Homepage</asp:HyperLink>
+            </div>
+	</header>
 	<p id="date"></p>
    <p id="time"></p>
 

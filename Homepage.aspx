@@ -16,6 +16,13 @@
 			<h1><img src="icon.ico" style="height: 90px"> We Talk</h1>
 		</div>
 	</header>
+        <div>
+               &nbsp; <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Main_Homepage.aspx" BackColor="Black" BorderStyle="Groove" BorderColor="Black" ForeColor="White" Height="40px" Width="133px" Font-Size="X-Large" Font-Italic="True" Font-Bold="True">Homepage</asp:HyperLink>
+            </div>
+        <div> &nbsp; &nbsp;
+            
+            <asp:Label ID="show" runat="server" Text=""></asp:Label>
+        </div>
 	<p id="date"></p>
    <p id="time"></p>
 

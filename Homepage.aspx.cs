@@ -63,9 +63,7 @@ public partial class Homepage : System.Web.UI.Page
             }
             else
             {
-                //TextBox3.Text = "UserId & Password Is not correct Try again..!! "+uid+" "+pass+"\n";
-                
-
+                show.Text = "UserId & Password Is not correct Try again..!! ";
             }
             con.Close();
         }

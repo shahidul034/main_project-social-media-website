@@ -4,10 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+    <link rel="stylesheet" type="text/css" href="Homepage.css">
     <title></title>
 </head>
 <body style="background-image: url('back.jpg'); background-attachment: scroll; border-style: solid">
     <form id="form1" runat="server">
+        <header>
+		<div class="T">
+			<h1><img src="icon.ico" style="height: 90px"> We Talk</h1>
+		</div>
+	</header>
    <div>
        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="Receiver" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" ShowFooter="True" Height="277px" Width="922px" >
            <AlternatingRowStyle BackColor="PaleGoldenrod" />
