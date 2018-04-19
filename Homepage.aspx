@@ -37,8 +37,11 @@
         <br>
          Remember me<asp:CheckBox ID="CheckBox1" runat="server" />
          <asp:Button ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />
-        
-			<a href="#">Forget Your Password</a><br><br>
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/updatepassword.aspx">Forget Your Password</asp:HyperLink>
+			
+			<br />
+        <br />
+			
 			<a href="SignUp.aspx">Create An Account</a><br><br>
 			<p class="X">
 				By clicking Create Account, you agree to our Terms and confirm that you have read our Data Policy, including our Cookie Use Policy. You may receive SMS message notifications from Facebook and can opt out at any time.
