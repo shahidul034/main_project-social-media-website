@@ -5,6 +5,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1
+        {
+            width: 100%;
+        }
+        .auto-style2
+        {
+            height: 23px;
+        }
+        .auto-style3
+        {
+            height: 23px;
+            width: 417px;
+        }
+        .auto-style4
+        {
+            width: 417px;
+        }
+        .auto-style5
+        {
+            height: 23px;
+            width: 350px;
+        }
+        .auto-style6
+        {
+            width: 350px;
+        }
+    </style>
 </head>
 <body runat="server" style="background-image:url(back.jpg)">
     <form id="form1" runat="server">
@@ -17,38 +45,105 @@
         
         </h1>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:HyperLink ID="message" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/Message.aspx" Width="93px">Message</asp:HyperLink>  &nbsp;&nbsp; &nbsp;
-         <asp:HyperLink ID="HyperLink1" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/newsfeed.aspx" Width="93px">Newsfeed</asp:HyperLink>&nbsp;&nbsp; &nbsp;
-          <asp:HyperLink ID="HyperLink2" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/friends.aspx" Width="93px">Friends</asp:HyperLink>  
+        <asp:HyperLink ID="message" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/Message.aspx" Width="93px">Message</asp:HyperLink>&nbsp;&nbsp;&nbsp;
+         <asp:HyperLink ID="HyperLink1" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/newsfeed.aspx" Width="93px">Newsfeed</asp:HyperLink>&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/friends.aspx" Width="93px">Friends</asp:HyperLink>  
         
-        <h1>&nbsp;&nbsp;&nbsp; Name:</h1>&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="H1" runat="server" BackColor="#006666" BorderStyle="Solid" ForeColor="#333333" Text="Name" BorderColor="Gray" BorderWidth="10px" Font-Size="X-Large" Width="432px"></asp:Label>
-        &nbsp;<asp:TextBox ID="TextBox1" runat="server" Height="29px" style="margin-top: 0px" placeholder="First name" BackColor="White"></asp:TextBox>
-        &nbsp;
-        <asp:TextBox ID="TextBox5" runat="server" Height="29px" placeholder="Last name" BackColor="White"></asp:TextBox>
-        &nbsp;
-        <asp:Button ID="update" runat="server" OnClick="Button2_Click" Text="Update" />
-        &nbsp;<h1>&nbsp;&nbsp;&nbsp; Email:</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="H2" runat="server" BackColor="#006666" BorderStyle="Solid" ForeColor="#333333" Text="Email" BorderColor="Gray" BorderWidth="10px" Font-Size="X-Large" Width="432px"></asp:Label>
-        &nbsp;<asp:TextBox ID="TextBox2" runat="server" Height="29px"  placeholder="Email"></asp:TextBox>
-&nbsp;
-        <asp:Button ID="Button1" runat="server" OnClick="Button3_Click" Text="Update" />
-        <br />
-        <br/>
-        <h1>&nbsp;&nbsp; Address:</h1>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:Label ID="H3" runat="server" BackColor="#006666" BorderStyle="Solid" ForeColor="#333333" Text="Address" BorderColor="Gray" BorderWidth="10px" Font-Size="X-Large" Width="432px"></asp:Label>
-        &nbsp;
-        <asp:TextBox ID="TextBox3" runat="server" Height="29px" placeholder="Address"></asp:TextBox>
-&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Update" OnClick="Button4_Click1" />
-        <br />
-        <br/>
-        <h1>&nbsp;&nbsp; Gender:</h1>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <asp:Label ID="H4" runat="server" BackColor="#006666" BorderStyle="Solid" ForeColor="#333333" Text="Gender" BorderColor="Gray" BorderWidth="10px" Font-Size="X-Large" Width="432px"></asp:Label>
-        &nbsp;&nbsp;
-        <asp:TextBox ID="TextBox4" runat="server" Height="29px" placeholder="Gender"></asp:TextBox>
-&nbsp;
-        <asp:Button ID="Button3" runat="server" Text="Update" OnClick="Button5_Click1" />
+       
         <br />
         <br />
+        <table class="auto-style1" runat="server"  cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="auto-style3">
+                    <asp:Label ID="Label3" runat="server" BackColor="#009999" Font-Size="XX-Large" ForeColor="Maroon" Height="35px" Text="Name" Width="200px" BorderStyle="Ridge"></asp:Label>
+                </td>
+                <td class="auto-style5"></td>
+                <td class="auto-style2"></td>
+                <td class="auto-style2"></td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="Label4" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" ForeColor="White" Height="49px" Width="409px" Font-Size="X-Large"></asp:Label>
+                </td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="TextBox8" runat="server" Height="49px" Width="342px" Font-Size="X-Large" placeholder="Enter first name" BorderColor="#3399FF" BorderStyle="Ridge"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:TextBox ID="TextBox11" runat="server" Height="49px" Width="342px" Font-Size="X-Large" placeholder="Enter last name" BorderColor="#3399FF" BorderStyle="Ridge"></asp:TextBox>
+                </td>
+                <td align="left">
+                    <asp:Button ID="Button6" runat="server" Height="49px" Text="Update" Width="94px" OnClick="Button6_Click" BackColor="Black" BorderColor="#996633" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="Label14" runat="server" BackColor="#009999" Font-Size="XX-Large" ForeColor="Maroon" Height="35px" Text="Email" Width="200px" BorderStyle="Ridge"></asp:Label>
+                </td>
+                <td class="auto-style6">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="Label11" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" ForeColor="White" Height="49px" Width="409px" Font-Size="X-Large"></asp:Label>
+                </td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="TextBox12" runat="server" Height="49px" Width="342px" Font-Size="X-Large" placeholder="Enter Email" BorderColor="#3399FF" BorderStyle="Ridge"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="Button7" runat="server" Height="49px" Text="Update" Width="94px" OnClick="Button7_Click" BackColor="Black" BorderColor="#996633" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" />
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="Label15" runat="server" BackColor="#009999" Font-Size="XX-Large" ForeColor="Maroon" Height="35px" Text="Address" Width="200px" BorderStyle="Ridge"></asp:Label>
+                </td>
+                <td class="auto-style6">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="Label12" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" ForeColor="White" Height="49px" Width="409px" Font-Size="X-Large"></asp:Label>
+                </td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="TextBox13" runat="server" Height="49px" Width="342px" Font-Size="X-Large" placeholder="Enter Address" BorderColor="#3399FF" BorderStyle="Ridge"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="Button8" runat="server" Height="49px" Text="Update" Width="94px" OnClick="Button8_Click" BackColor="Black" BorderColor="#996633" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" />
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="Label16" runat="server" BackColor="#009999" Font-Size="XX-Large" ForeColor="Maroon" Height="35px" Text="Gender" Width="200px" BorderStyle="Ridge"></asp:Label>
+                </td>
+                <td class="auto-style6">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Label ID="Label13" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" ForeColor="White" Height="49px" Width="409px" Font-Size="X-Large"></asp:Label>
+                </td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="TextBox14" runat="server" Height="49px" Width="342px" placeholder="Enter Gender" BorderColor="#3399FF" BorderStyle="Ridge" Font-Size="X-Large"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="Button9" runat="server" Height="49px" Text="Update" Width="94px" OnClick="Button9_Click" BackColor="Black" BorderColor="#996633" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" />
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+        
+       
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" ShowFooter="True" Width="1095px" Height="374px">
+        <br />
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" Width="1095px" Height="374px" Font-Size="X-Large">
             <Columns>
                 <asp:TemplateField HeaderText="post_name" SortExpression="post_name">
                     <EditItemTemplate>
@@ -85,7 +180,6 @@
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
         <br />
-        <asp:LinkButton ID="insert" runat="server" OnClick="lbInsert_Click" BackColor="White" BorderColor="#996600" BorderStyle="Solid" ForeColor="Black" Height="33px" Width="114px" Font-Size="X-Large">   Insert</asp:LinkButton>
         <br />
         <br />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:postConnectionString %>" SelectCommand="SELECT [post_name], [post_details] FROM [post_store] WHERE ([username] = @username)">
@@ -93,16 +187,71 @@
                 <asp:SessionParameter Name="username" SessionField="username" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <table class="auto-style1">
+            <tr>
+                <td>
+                    <asp:TextBox ID="TextBox18" runat="server" Height="32px" Width="268px" placeholder="Enter post name" Font-Size="X-Large" BorderColor="#3399FF" BorderStyle="Ridge"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:TextBox ID="TextBox16" runat="server" Height="190px" Width="401px" placeholder="Enter post details" Font-Size="X-Large" BorderColor="#3399FF" BorderStyle="Ridge"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="Button10" runat="server" Height="42px" Text="Insert" Width="122px" BackColor="Black" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" OnClick="Button10_Click" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2"></td>
+                <td class="auto-style2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:TextBox ID="TextBox17" runat="server" Height="32px" Width="268px" placeholder="Enter post name for deleting" Font-Size="X-Large" BorderColor="#3399FF" BorderStyle="Ridge"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="Button14" runat="server" Height="42px" Text="Delete" Width="122px" BackColor="Black" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" OnClick="Button14_Click" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="Button15" runat="server" Height="42px" Text="Logout" Width="122px" BackColor="Maroon" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" OnClick="Button15_Click" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
         <br />
-        <asp:TextBox ID="TextBox6" runat="server" Height="102px" Width="348px" placeholder="Enter post name"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="Button4" runat="server" OnClick="delete_button" Text="Delete" Font-Size="X-Large" Height="36px" Width="97px" />
         <br />
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button5" runat="server" BackColor="Maroon" ForeColor="White" Height="31px" OnClick="Button5_Click" Text="Logout" Width="145px" />
         <br />
         <br />
         <br/>

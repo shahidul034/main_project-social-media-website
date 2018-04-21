@@ -15,11 +15,11 @@
     <form id="form1" runat="server">
         <div>
 
-            <asp:Label ID="Label1" runat="server" BackColor="Black" BorderColor="Silver" ForeColor="White" Text="Friend's list"></asp:Label>
+            <asp:Label ID="Label1" runat="server" BackColor="Black" BorderColor="Silver" ForeColor="White" Text="Friend's list" Font-Size="XX-Large" BorderStyle="Ridge"></asp:Label>
             <br />
 
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="340px" Width="856px">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="416px" Width="1108px" Font-Size="X-Large">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
@@ -38,17 +38,17 @@
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ContectConnectionString %>" SelectCommand="SELECT [username], [Firstname] FROM [sign_up]"></asp:SqlDataSource>
         <br />
-        <asp:Label ID="Label2" runat="server" BackColor="Black" ForeColor="White" Text="Add new friend"></asp:Label>
+        <asp:Label ID="Label2" runat="server" BackColor="Black" ForeColor="White" Text="Add new friend" Font-Size="XX-Large" BorderStyle="Ridge"></asp:Label>
         <br />
         <br />
-        <asp:TextBox ID="TextBox1" runat="server" Height="18px" Width="169px"></asp:TextBox>
+        <asp:TextBox ID="TextBox1" runat="server" Height="40px" Width="350px" Font-Size="X-Large" placeholder="Enter friend's username" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" ForeColor="White"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add friend" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add friend" Font-Size="X-Large" Height="42px" BackColor="Maroon" BorderStyle="Ridge" />
         <br />
         <br />
-        <asp:Label ID="Label3" runat="server" Text="My friend's list"></asp:Label>
+        <asp:Label ID="Label3" runat="server" Text="My friend's list" BackColor="Black" BorderStyle="Ridge" Font-Size="XX-Large" ForeColor="White"></asp:Label>
         <br />
-        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Myfriends" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="221px" Width="753px">
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Myfriends" DataSourceID="SqlDataSource2" Font-Size="X-Large" ForeColor="#333333" GridLines="None" Height="344px" Width="1060px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="Myfriends" HeaderText="Myfriends" ReadOnly="True" SortExpression="Myfriends" />
@@ -64,7 +64,12 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:postConnectionString %>" SelectCommand="SELECT [Myfriends] FROM [friends]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:postConnectionString %>" SelectCommand="SELECT [Myfriends] FROM [friends] WHERE ([myusername] = @myusername)">
+            <SelectParameters>
+                <asp:SessionParameter Name="myusername" SessionField="username" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <br />
         <br />
     </form>
 </body>

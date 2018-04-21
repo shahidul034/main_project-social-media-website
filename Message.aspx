@@ -6,6 +6,12 @@
 <head id="Head1" runat="server">
     <link rel="stylesheet" type="text/css" href="Homepage.css">
     <title></title>
+    <style type="text/css">
+        .auto-style1
+        {
+            width: 100%;
+        }
+    </style>
 </head>
 <body style="background-image: url('back.jpg'); background-attachment: scroll; border-style: solid">
     <form id="form1" runat="server">
@@ -15,7 +21,7 @@
 		</div>
 	</header>
    <div>
-       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="Receiver" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" ShowFooter="True" Height="277px" Width="922px" >
+       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="#3399FF" BorderWidth="6px" CellPadding="2" DataKeyNames="Receiver" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Height="328px" Width="922px" BackImageUrl="~/img/sea.jpg" BorderStyle="Ridge" Font-Size="X-Large" >
            <AlternatingRowStyle BackColor="PaleGoldenrod" />
            <Columns>
                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -57,7 +63,7 @@
                    </FooterTemplate>
                </asp:TemplateField>
            </Columns>
-           <FooterStyle BackColor="Tan" />
+           <FooterStyle BackColor="Black" BorderStyle="Ridge" Font-Italic="True" Font-Size="X-Large" />
            <HeaderStyle BackColor="Tan" Font-Bold="True" />
            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
@@ -85,6 +91,24 @@
            </UpdateParameters>
        </asp:SqlDataSource>
 </div>
+        <table cellspacing="1" class="auto-style1">
+            <tr>
+                <td colspan="3">
+                    <asp:TextBox ID="TextBox3" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" Height="47px" Width="236px" placeholder="Enter Receiver name"></asp:TextBox>
+                    <asp:TextBox ID="TextBox4" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Ridge" Font-Size="X-Large" ForeColor="White" Height="47px" Width="236px" placeholder="Enter message"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" BackColor="Maroon" BorderColor="#996633" BorderStyle="Ridge" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="47px" Text="Sent" Width="92px" OnClick="button_click" />
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

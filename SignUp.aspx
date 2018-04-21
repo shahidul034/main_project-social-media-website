@@ -39,7 +39,14 @@
                 <p>Address</p>
                 <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                <p>Gender</p>
-                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                 <div>  
+            <asp:DropDownList ID="DropDownList1" runat="server" >  
+            <asp:ListItem Value="">Please Select</asp:ListItem>  
+            <asp:ListItem>Male</asp:ListItem>  
+            <asp:ListItem>Female</asp:ListItem>  
+        </asp:DropDownList>  
+        </div>  
+                <br />
                 <br />
 
 
@@ -48,6 +55,11 @@
                 <a href="Homepage.aspx">Already have a account! sign in</a>
 			</form>
 		</div>
+		
+		
+	    <p>
+            <asp:Label ID="Label2" runat="server" Font-Size="X-Large" ForeColor="Red"></asp:Label>
+        </p>
 		
 		
 	</body>

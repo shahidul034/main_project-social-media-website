@@ -50,10 +50,10 @@ public partial class Timeline : System.Web.UI.Page
             if (sdr.Read())
             {
                 string str=sdr["Firstname"].ToString()+" "+sdr["Lastname"].ToString();
-                H1.Text = str;
-                H2.Text = sdr["Email"].ToString();
-                H3.Text = sdr["Address"].ToString();
-                H4.Text = sdr["Gender"].ToString();
+                Label4.Text = str;
+                Label11.Text = sdr["Email"].ToString();
+                Label12.Text = sdr["Address"].ToString();
+                Label13.Text = sdr["Gender"].ToString();
       
               
       
@@ -92,12 +92,12 @@ public partial class Timeline : System.Web.UI.Page
     {
 
     }
-    protected void Button2_Click(object sender, EventArgs e)
+    protected void Button6_Click(object sender, EventArgs e)
     {
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
-        string t1 = TextBox1.Text;
-        string t2 = TextBox5.Text;
+        string t1 = TextBox8.Text;
+        string t2 = TextBox11.Text;
         
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
         try
@@ -122,11 +122,11 @@ public partial class Timeline : System.Web.UI.Page
         } 
 
     }
-    protected void Button3_Click(object sender, EventArgs e)
+    protected void Button7_Click(object sender, EventArgs e)
     {
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
-        string t1 = TextBox2.Text;
+        string t1 = TextBox12.Text;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
         try
         {
@@ -145,11 +145,11 @@ public partial class Timeline : System.Web.UI.Page
         } 
 
     }
-    protected void Button4_Click1(object sender, EventArgs e)
+    protected void Button8_Click(object sender, EventArgs e)
     {
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
-        string t1 = TextBox3.Text;
+        string t1 = TextBox13.Text;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
         try
         {
@@ -167,11 +167,11 @@ public partial class Timeline : System.Web.UI.Page
             Response.Write(ex.Message);
         } 
     }
-    protected void Button5_Click1(object sender, EventArgs e)
+    protected void Button9_Click(object sender, EventArgs e)
     {
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
-        string t1 = TextBox4.Text;
+        string t1 = TextBox14.Text;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
         try
         {
@@ -191,11 +191,11 @@ public partial class Timeline : System.Web.UI.Page
 
     }
 
-        protected void lbInsert_Click(object sender, EventArgs e)
+    protected void Button10_Click(object sender, EventArgs e)
 {
     string username = Session["username"].ToString();
-    string str1=((TextBox)GridView1.FooterRow.FindControl("post_text")).Text;
-    string str2 = ((TextBox)GridView1.FooterRow.FindControl("details_text")).Text;
+    string str1 = TextBox18.Text;
+    string str2 = TextBox12.Text;
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
     try
     {
@@ -216,10 +216,10 @@ public partial class Timeline : System.Web.UI.Page
   
 
     }
-        protected void delete_button(object sender, EventArgs e)
+    protected void Button14_Click(object sender, EventArgs e)
         {
              string username = Session["username"].ToString();
-             string str = TextBox6.Text;
+             string str = TextBox17.Text;
 
              SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
              try
@@ -243,10 +243,17 @@ public partial class Timeline : System.Web.UI.Page
 
 
         }
-        protected void Button5_Click(object sender, EventArgs e)
+    protected void Button15_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Cookies["uname"].Expires = DateTime.Now.AddMinutes(-1);
             Response.Redirect("Main_Homepage.aspx");
         }
+
+
+
+
+
+
+    
 }

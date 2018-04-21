@@ -31,7 +31,18 @@ public partial class SignUp : System.Web.UI.Page
             string t4 = TextBox4.Text;
             string t5 = TextBox5.Text;
             string t6 = TextBox6.Text;
-            string t7 = TextBox7.Text;
+            string t7="";
+            if (DropDownList1.SelectedValue == "")
+            {
+                Label2.Text = "Please Select a Gender";
+            }
+            else {
+                t7= DropDownList1.SelectedValue;  
+            
+            }  
+                
+        
+            
 
 
             if (con.State != ConnectionState.Open)
@@ -39,6 +50,9 @@ public partial class SignUp : System.Web.UI.Page
             string qry = "insert into sign_up values('" + t1 + "','" + t2 + "','" + t3 + "','" + t4 + "','" + t5 + "','" + t6 + "','" + t7 + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataReader sdr = cmd.ExecuteReader();
+              
+                Response.Redirect("Homepage.aspx");
+         
             con.Close();
         }
         catch (Exception ex)
@@ -61,6 +75,7 @@ public partial class SignUp : System.Web.UI.Page
 
             SqlCommand cmd2 = new SqlCommand(qry2, conn);
             SqlDataReader sdr2 = cmd2.ExecuteReader();
+           
 
             conn.Close();
         }

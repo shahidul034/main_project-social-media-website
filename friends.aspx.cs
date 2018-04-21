@@ -36,4 +36,5 @@ public partial class friends : System.Web.UI.Page
             Response.Write(ex.Message);
         }
     }
+    
 }
