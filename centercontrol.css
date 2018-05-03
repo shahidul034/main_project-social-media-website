@@ -1,0 +1,14 @@
+﻿#page {
+  margin-left:auto;
+  margin-right:auto;
+  width:1102px;
+}
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}

@@ -30,9 +30,14 @@ public partial class updatepassword : System.Web.UI.Page
             string qry = "insert into request values('" + t1 + "','" + t2 + "','" + t3 + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataReader sdr = cmd.ExecuteReader();
-            if (sdr.Read()) {
+            if ((sdr.Read()) != null)
+            {
                 Label1.Text = "Your request sent sucessfully";
-            
+
+            }
+            else {
+                Label1.Text = "Your request not sent sucessfully";
+
             }
             con.Close();
         }

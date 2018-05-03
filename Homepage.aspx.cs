@@ -25,8 +25,15 @@ public partial class Homepage : System.Web.UI.Page
                 Response.Redirect("Timeline.aspx");
             }
  
-        } 
+        }
+
+
+
     }
+    
+
+
+
     protected void Button1_Click(object sender, EventArgs e)
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
@@ -46,7 +53,7 @@ public partial class Homepage : System.Web.UI.Page
                 {
                     Response.Cookies["uname"].Value = uid;
                     Response.Cookies["password"].Value = pass;
-                    Response.Cookies["uname"].Expires=DateTime.Now.AddMinutes(3);
+                    Response.Cookies["uname"].Expires=DateTime.Now.AddMinutes(20);
                 
                 }
                 Session["username"] = uid;
@@ -64,4 +71,5 @@ public partial class Homepage : System.Web.UI.Page
             Response.Write(ex.Message);
         } 
     }
+    
 }

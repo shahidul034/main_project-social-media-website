@@ -18,7 +18,7 @@ public partial class Message : System.Web.UI.Page
     protected void button_click(object sender, EventArgs e)
     {
         string senderq = Session["username"].ToString();
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
         try
         {
             string receiver = TextBox3.Text;
@@ -26,11 +26,9 @@ public partial class Message : System.Web.UI.Page
 
             if (con.State != ConnectionState.Open)
                 con.Open();
-            string qry = "insert into sign_up values('" + senderq + "','" + receiver + "','" + msg + "')";
+            string qry = "insert into message_store values('" + senderq + "','" + receiver + "','" + msg + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
-            SqlDataReader sdr = cmd.ExecuteReader();
-
-        
+            SqlDataReader sdr = cmd.ExecuteReader();   
 
             con.Close();
         }

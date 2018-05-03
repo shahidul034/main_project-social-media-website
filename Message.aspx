@@ -1,10 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Message.aspx.cs" Inherits="Message" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <link rel="stylesheet" type="text/css" href="Homepage.css">
+    <link rel="stylesheet" type="text/css" href="centercontrol.css">
     <title></title>
     <style type="text/css">
         .auto-style1
@@ -15,12 +15,13 @@
 </head>
 <body style="background-image: url('back.jpg'); background-attachment: scroll; border-style: solid">
     <form id="form1" runat="server">
-        <header>
-		<div class="T">
+        <div><header>
+		
 			<h1><img src="icon.ico" style="height: 90px"> We Talk</h1>
-		</div>
+		
 	</header>
-   <div>
+            </div>
+   <div id="page" style="background-image: none">
        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="#3399FF" BorderWidth="6px" CellPadding="2" DataKeyNames="Receiver" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Height="328px" Width="922px" BackImageUrl="~/img/sea.jpg" BorderStyle="Ridge" Font-Size="X-Large" >
            <AlternatingRowStyle BackColor="PaleGoldenrod" />
            <Columns>
@@ -91,6 +92,7 @@
            </UpdateParameters>
        </asp:SqlDataSource>
 </div>
+        <div  id="page">
         <table cellspacing="1" class="auto-style1">
             <tr>
                 <td colspan="3">
@@ -108,7 +110,7 @@
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
-        </table>
+        </table></div>
     </form>
 </body>
 </html>

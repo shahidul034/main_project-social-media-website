@@ -137,6 +137,33 @@ public partial class SignUp : System.Web.UI.Page
 
 
     }
+    protected int function(string str)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        con.Open();
+
+        SqlCommand cmd = con.CreateCommand();
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.CommandText = "select * from sign_up where username='" + str + "'";
+        cmd.ExecuteNonQuery();
+
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
+
+        da.Fill(dt);
+
+        if (dt.Rows.Count == 1)
+        {
+            return 1;
+
+        }
+        else
+            return 0;
+
+        con.Close();
+
+        return 0;
+    }
     
     
         

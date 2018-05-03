@@ -195,7 +195,7 @@ public partial class Timeline : System.Web.UI.Page
 {
     string username = Session["username"].ToString();
     string str1 = TextBox18.Text;
-    string str2 = TextBox12.Text;
+    string str2 = TextBox16.Text;
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
     try
     {

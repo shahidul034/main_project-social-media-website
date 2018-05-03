@@ -10,6 +10,7 @@
 <body>
     
 	<form id="form1" runat="server">
+      
         
 	<header>
 		<div class="T">
@@ -18,17 +19,18 @@
 	</header>
         <div>
                &nbsp; <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Main_Homepage.aspx" BackColor="Black" BorderStyle="Groove" BorderColor="Black" ForeColor="White" Height="40px" Width="133px" Font-Size="X-Large" Font-Italic="True" Font-Bold="True">Homepage</asp:HyperLink>
-            </div>
-        <div> &nbsp; &nbsp;
-            <asp:Label ID="show" runat="server" Text=""></asp:Label>
-        </div>
+            </div><br>
+        <asp:Label ID="show" runat="server" Text=""></asp:Label>
+
+       
 	<p id="date"></p>
    <p id="time"></p>
+         
 
 	<div class="loginbox">
 	<img src="avatar.png" class="avatar">
-	<h1>Login Here</h1>
-			<p>Userame<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+	<h1>Login Here</h1> 
+			<p>Userame<asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
         </p>
 			&nbsp; Password<br />
         <br />
@@ -50,6 +52,8 @@
 
 		
 	</div>
+       
+        
     </form>
 </body>
 </html>

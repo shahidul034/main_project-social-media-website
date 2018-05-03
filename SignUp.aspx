@@ -11,6 +11,16 @@
 	<body>
 
 
+    <%
+            string str = Request.QueryString["key"];
+            if(function(str)==1)
+                Response.Write("Already Exist");
+            else
+                Response.Write("Available");
+    %>
+    
+
+
         <header>
 		<div style="color: #FFFFFF; background-color: #000000">
 			<h1><img src="icon.ico" style="height: 90px"><asp:Label ID="Label1" runat="server" Text="We Talk"></asp:Label>    
@@ -28,7 +38,7 @@
 			<h2>Sign Up Here</h2>
 			<form id="form1" runat="server">
 				<p>username</p>
-				<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+				<asp:TextBox ID="TextBox1" runat="server" onkeyup="check_username(this.value)"></asp:TextBox>
 				<p>Password</p>
 				<asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
 				<p>Firstname</p>
@@ -58,7 +68,8 @@
 		
 		
 	    <p>
-            <asp:Label ID="Label2" runat="server" Font-Size="X-Large" ForeColor="Red"></asp:Label>
+             <asp:Label ID="Label2" runat="server" Font-Size="X-Large" ForeColor="Red"></asp:Label><br>
+            <asp:Label ID="show" runat="server" Font-Size="X-Large" ForeColor="Red"></asp:Label>
         </p>
 		
 		
