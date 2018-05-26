@@ -11,7 +11,6 @@
     
 	<form id="form1" runat="server">
       
-        
 	<header>
 		<div class="T">
 			<h1><img src="icon.ico" style="height: 90px"> We Talk</h1>

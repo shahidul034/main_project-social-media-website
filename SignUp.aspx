@@ -9,18 +9,6 @@
 		<link rel="stylesheet" href="signup.css">
 	</head>
 	<body>
-
-
-    <%
-            string str = Request.QueryString["key"];
-            if(function(str)==1)
-                Response.Write("Already Exist");
-            else
-                Response.Write("Available");
-    %>
-    
-
-
         <header>
 		<div style="color: #FFFFFF; background-color: #000000">
 			<h1><img src="icon.ico" style="height: 90px"><asp:Label ID="Label1" runat="server" Text="We Talk"></asp:Label>    
@@ -56,6 +44,9 @@
             <asp:ListItem>Female</asp:ListItem>  
         </asp:DropDownList>  
         </div>  
+                <div>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                 </div>
                 <br />
                 <br />
 

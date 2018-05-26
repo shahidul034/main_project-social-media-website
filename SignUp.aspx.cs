@@ -16,13 +16,14 @@ using System.IO;
 
 public partial class SignUp : System.Web.UI.Page
 {
+    static String imagelink;
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
         try
         {
             string t1 = TextBox1.Text;
@@ -46,7 +47,19 @@ public partial class SignUp : System.Web.UI.Page
 
 
             if (con.State != ConnectionState.Open)
-                con.Open(); 
+                con.Open();
+            if (uploadimage() == true)
+            {
+                String query = "insert into [picture](username,profileimage) values('" + TextBox1.Text + "','" + imagelink + "')";
+                SqlCommand cmd2 = new SqlCommand();
+                cmd2.CommandText = query;
+                cmd2.Connection = con;
+                cmd2.ExecuteNonQuery();
+                
+            }
+
+
+
             string qry = "insert into sign_up values('" + t1 + "','" + t2 + "','" + t3 + "','" + t4 + "','" + t5 + "','" + t6 + "','" + t7 + "')";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -65,7 +78,7 @@ public partial class SignUp : System.Web.UI.Page
         string username = TextBox1.Text;
         string str1 = "hi";
         string str2 = "hello";
-        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
+        SqlConnection conn = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=post;Integrated Security=True");
         try
         {
 
@@ -84,86 +97,65 @@ public partial class SignUp : System.Web.UI.Page
             Response.Write(ex.Message);
         } 
   
-
-
-
-
-        ////////////////////////////////////////
-       /* string NewName = TextBox1.Text;
-        string table_name = NewName;
-
-         SqlConnection newcon = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
-          try
-          {
-              string UserName = TextBox1.Text;
-
-              if (newcon.State != ConnectionState.Open)
-                  newcon.Open();
-              string column1 = "Serial_number";
-              string column2 = "post_name";
-          string column3 = "post_details";
-          
-          //string column3 = "post_name2";
-          string query = "create  table " + table_name + " (" + column1 + " int Primary key identity," + column2 + " nvarchar(MAX)," + column3 + " nvarchar(MAX)) "; 
-              SqlCommand cmd2 = new SqlCommand(query, newcon);
-              SqlDataReader sdr2 = cmd2.ExecuteReader();
-              newcon.Close();
-          }
-          catch (Exception ex)
-          {
-              Response.Write(ex.Message);
-          }
-        /////////////////
-
-       
-        */
-        /*SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
-        string NewName = TextBox1.Text;
-        string table_name = NewName;
-
-        string column1 = "Serial_number";
-        string column2 = "post_name";
-        string column3 = "post_name2";
-        string query = "create  table " + table_name + " (" + column1 + " int," + column2 + " varchar(255)" + column3 +" varchar(255))";
-        SqlCommand cmd2 = new SqlCommand(query, conn);
-        conn.Open();
-        cmd2.ExecuteNonQuery();
-        conn.Close();*/
-
-
-        ///////////////////////////
-
- 
-
-
     }
-    protected int function(string str)
+
+
+    private Boolean uploadimage()
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
-        con.Open();
-
-        SqlCommand cmd = con.CreateCommand();
-        cmd.CommandType = System.Data.CommandType.Text;
-        cmd.CommandText = "select * from sign_up where username='" + str + "'";
-        cmd.ExecuteNonQuery();
-
-        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        DataTable dt = new DataTable();
-
-        da.Fill(dt);
-
-        if (dt.Rows.Count == 1)
+        Boolean imagesaved = false;
+        if (FileUpload1.HasFile == true)
         {
-            return 1;
 
+            String contenttype = FileUpload1.PostedFile.ContentType;
+
+            if (contenttype == "image/jpeg" || contenttype == "image/png" || contenttype == "image/gif")
+            {
+                int filesize;
+                filesize = FileUpload1.PostedFile.ContentLength;
+
+                //if (filesize <= 51200)
+                if (true)
+                {
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream);
+                    int height = img.Height;
+                    int width = img.Width;
+                    //if (height == 200 && width == 200)
+                    if (true)
+                    {
+                        FileUpload1.SaveAs(Server.MapPath("~/ProfileImage/") + TextBox1.Text + ".jpg");
+                        //Image1.ImageUrl = "~/ProfileImage/" + TextBox1.Text + ".jpg";
+                        imagelink = "ProfileImage/" + TextBox1.Text + ".jpg";
+                        imagesaved = true;
+                    }
+                    else
+                    {
+                        //Labelsave.Text = "Kindly Upload JPEG Image in Proper Dimensions 200 x 200";
+                    }
+
+
+
+
+                }
+                else
+                {
+                    //Labelsave.Text = "File Size exceeds 50 KB - Please Upload File Size Maximum 50 KB";
+                }
+
+            }
+            else
+            {
+                //Labelsave.Text = "Only JPEG/JPG Image File Acceptable - Please Upload Image File Again";
+            }
         }
         else
-            return 0;
+        {
+            //Labelsave.Text = "You have not selected any file - Browse and Select File First";
+        }
 
-        con.Close();
+        return imagesaved;
 
-        return 0;
     }
+
     
     
         

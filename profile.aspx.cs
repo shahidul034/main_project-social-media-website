@@ -17,7 +17,7 @@ public partial class profile : System.Web.UI.Page
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
         TextBox1.InnerText = username;
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
         try
         {
            

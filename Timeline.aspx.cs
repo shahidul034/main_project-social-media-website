@@ -14,6 +14,7 @@ using System.Data;
 
 public partial class Timeline : System.Web.UI.Page
 {
+    static String imagelink;
     protected void Page_Load(object sender, EventArgs e)
     {
         string username2="", password="";
@@ -38,7 +39,7 @@ public partial class Timeline : System.Web.UI.Page
             
        
         H.InnerText = username2;
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
         try
         {
 
@@ -70,6 +71,27 @@ public partial class Timeline : System.Web.UI.Page
         {
             Response.Write(ex.Message);
         }
+
+        SqlConnection mycon = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
+        mycon.Open();
+        String myquery = "Select * from picture where username='" + username2 + "'";
+        SqlCommand cmd2 = new SqlCommand(myquery, mycon);
+        SqlDataReader sdr2 = cmd2.ExecuteReader();
+ 
+        if (sdr2.Read())
+        {
+            imagelink = sdr2["profileimage"].ToString();    
+            Image1.ImageUrl = imagelink + "?n=" + DateTime.Now.Second.ToString();
+
+        }
+        else
+        {
+            //Labeld.Text = "Particular Roll Number Not Found";
+
+        }
+        mycon.Close();
+    
+
         
 
     }
@@ -98,8 +120,8 @@ public partial class Timeline : System.Web.UI.Page
         string password = Session["password"].ToString();
         string t1 = TextBox8.Text;
         string t2 = TextBox11.Text;
-        
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
         try
         {
 
@@ -127,7 +149,7 @@ public partial class Timeline : System.Web.UI.Page
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
         string t1 = TextBox12.Text;
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
         try
         {
 
@@ -150,7 +172,7 @@ public partial class Timeline : System.Web.UI.Page
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
         string t1 = TextBox13.Text;
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
         try
         {
 
@@ -172,7 +194,7 @@ public partial class Timeline : System.Web.UI.Page
         string username = Session["username"].ToString();
         string password = Session["password"].ToString();
         string t1 = TextBox14.Text;
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=signup;Integrated Security=True");
         try
         {
 
@@ -196,7 +218,7 @@ public partial class Timeline : System.Web.UI.Page
     string username = Session["username"].ToString();
     string str1 = TextBox18.Text;
     string str2 = TextBox16.Text;
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
+    SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=post;Integrated Security=True");
     try
     {
 
@@ -221,7 +243,7 @@ public partial class Timeline : System.Web.UI.Page
              string username = Session["username"].ToString();
              string str = TextBox17.Text;
 
-             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
+             SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=post;Integrated Security=True");
              try
              {
 
@@ -249,6 +271,7 @@ public partial class Timeline : System.Web.UI.Page
             Response.Cookies["uname"].Expires = DateTime.Now.AddMinutes(-1);
             Response.Redirect("Main_Homepage.aspx");
         }
+
 
 
 

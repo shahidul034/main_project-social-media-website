@@ -25,7 +25,6 @@
        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="#3399FF" BorderWidth="6px" CellPadding="2" DataKeyNames="Receiver" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Height="328px" Width="922px" BackImageUrl="~/img/sea.jpg" BorderStyle="Ridge" Font-Size="X-Large" >
            <AlternatingRowStyle BackColor="PaleGoldenrod" />
            <Columns>
-               <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                <asp:TemplateField HeaderText="Sender" SortExpression="Sender">
                    <EditItemTemplate>
                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Sender") %>'></asp:TextBox>

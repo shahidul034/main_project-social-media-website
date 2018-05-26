@@ -18,7 +18,7 @@ public partial class Message : System.Web.UI.Page
     protected void button_click(object sender, EventArgs e)
     {
         string senderq = Session["username"].ToString();
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon2"].ToString());
+        SqlConnection con = new SqlConnection(@"Data Source=SHAHIDULSHAKIB\SQLEXPRESS2;Initial Catalog=post;Integrated Security=True");
         try
         {
             string receiver = TextBox3.Text;

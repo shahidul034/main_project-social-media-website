@@ -84,20 +84,16 @@ function confirmation2(elem1,elem2,elem3,elem4)
 
 function check_username(str) {
     if (str.length == 0) {
-
         document.getElementById("show").innerHTML = "";
-
-
     }
     else {
         var httpr = new XMLHttpRequest();
         httpr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("show").innerHTML = this.responseText;
-
             }
         };
-        httpr.open("GET", "SignUp.aspx?key=" + str, true);
+        httpr.open("GET", "ajax(check_username).aspx?key=" + str, true);
         httpr.send();
     }
 

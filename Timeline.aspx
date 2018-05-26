@@ -45,10 +45,20 @@
     <h1 id="H"  runat="server" style="font-size: 100px; font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic; color: #000000; background-color: #009999; border-style: solid; text-transform: capitalize; float: inherit;">
         
         </h1>
+       
+        
+
         <div id="page">
         <asp:HyperLink ID="message" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/Message.aspx" Width="93px">Message</asp:HyperLink>&nbsp;&nbsp;&nbsp;
          <asp:HyperLink ID="HyperLink1" runat="server" BackColor="Black" BorderColor="#996600" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/newsfeed.aspx" Width="93px">Newsfeed</asp:HyperLink>&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" BackColor="Black" BorderColor="#996633" BorderStyle="Solid" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="White" Height="40px" NavigateUrl="~/friends.aspx" Width="93px">Friends</asp:HyperLink>  
+            <br />
+            <br />
        </div> 
+         <div id="page">
+            <asp:Image ID="Image1" runat="server" Height="300px" Width="400px" />
+            <br />
+            <br />
+            </div>
        
         <br />
         <br />
